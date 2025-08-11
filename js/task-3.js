@@ -1,7 +1,15 @@
-function getElementWidth(content, padding, border) {
-  return parseFloat(content) + parseFloat(padding) * 2 + parseFloat(border) * 2;
+function checkForSpam(message) {
+  const messageSpam = message.toLowerCase();
+  if (messageSpam.includes('spam') || messageSpam.includes('sale')) {
+    return console.log(true);
+  }
+  return console.log(false);
 }
 
-console.log(getElementWidth('50px', '8px', '4px')); // 74
-console.log(getElementWidth('60px', '12px', '8.5px')); // 101
-console.log(getElementWidth('200px', '0px', '0px')); // 200
+checkForSpam('Latest technology news');
+checkForSpam('JavaScript weekly newsletter');
+checkForSpam('Get best sale offers now!');
+checkForSpam('Amazing SalE, only tonight!');
+checkForSpam('Trust me, this is not a spam message');
+checkForSpam('Get rid of sPaM emails. Our book in on sale!');
+checkForSpam('[SPAM] How to earn fast money?');

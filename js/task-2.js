@@ -1,8 +1,15 @@
-function getShippingMessage(country, price, deliveryFee) {
-  const totalPrice = price + deliveryFee;
-  return `Shipping to ${country} will cost ${totalPrice} credits`;
+function formatMessage(message, maxLength) {
+  if (message.length > maxLength) {
+    const smallMessage = message.slice(0, maxLength);
+    console.log(`${smallMessage}...`);
+  } else {
+    console.log(message);
+  }
 }
 
-console.log(getShippingMessage('Australia', 120, 50)); // "Shipping to Australia will cost 170 credits"
-console.log(getShippingMessage('Germany', 80, 20)); // "Shipping to Germany will cost 100 credits"
-console.log(getShippingMessage('Sweden', 100, 20)); // "Shipping to Sweden will cost 120 credits"
+formatMessage('Curabitur ligula sapien', 16);
+formatMessage('Curabitur ligula sapien', 23);
+formatMessage('Vestibulum facilisis purus nec', 20);
+formatMessage('Vestibulum facilisis purus nec', 30);
+formatMessage('Nunc sed turpis a felis in nunc fringilla', 15);
+formatMessage('Nunc sed turpis a felis in nunc fringilla', 41);
